@@ -1,49 +1,36 @@
-body{
-    background-color: rgb(246, 236, 236);
+*{
+    background-color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
-    font-family: arial;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif ;
 }
-.heading{
-    height: 0.7cm;
-    width:95%;
-    background-color: #E4042C;
-    border-radius: 5px;margin-left: 10px;
-      padding-left: 25px;
-      padding-top: 10px;
-      color: azure;
+.name{
+    margin-top: 5px;
+    background-color: rgb(235, 240, 244);
+    width: 400px;
+    height: 23px;   
+    border-radius: 2px;
+}
+.box{
+    width: 400px;
+    height: 20px;   
+    border-radius: 4px;
+    margin-top: 5px;
 }
 .align{
+    width: 190px;
+    height: 20px;   
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.flex{
     display: flex;
 }
-
-.box{
-    margin-left: 18px;
-    margin-top: 7px;
-    border: 1px solid rgb(228, 225, 228);
-    height: 700px;
-    width: 70%;
-    background-color: #ffffff;
-    border-radius: 5px;
-}
-.matter{
-       margin-top: 20px;margin-left: 25px;
-       display: flex;
-}
-.box2{
-    margin-left: 1800px;
-    margin-top: 7px;
-    border: 1px solid rgb(228, 225, 228);
-    height: 350px;
-    width: 22.5%;
-    background-color: #ffffff;
-    border-radius: 5px;
-}
-.btn{
-    height: 20px;
-    margin-left: 36px;
-    background-color: #E4042C;
-    color: #ffffff;
-    font-size:  larger;
-    border-radius:  2px;
+.submit{
+    width: 100px;
+    height: 30px;   
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: rgb(224, 231, 13);
+    border: 1px solid rgb(219, 189, 0);
 }

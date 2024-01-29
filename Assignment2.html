@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+       
+   <div style="margin-left: 5px;">
+    <label for="name"><h5>Country/Region</h5></label>
+    <select class="name" id="dim" >
+        <option value="india">India</option>
+        <option value="unitedstates">United States</option>
+        <option value="unitedkingdom">United kingdom</option>
+        <option value="australia">Australia</option>
+    </select>
+    <br><br>
+    <label for="name"> <h5>Full name(First and Last name)</h5></label>
+   <input type="text"  class="box" >
+   <br><br>
+   <label for="number"> <h5>Mobile number</h5></label>
+   <input type="number"  class="box">
+   <br><p  style="font-size:x-small ;margin-top: 5px;font-style: italic;">May be used to assist delivery</p>
+   <br>
+   <label for="pincode"> <h5 >Pincode</h5></label>
+   <input type="text"  placeholder="6 digits[0-9] PIN code" class="box">
+   <br><br>
+   <label for="Address"> <h5 >Flat,House no., Building,Company,Apartment</h5></label>
+   <input type="text"  class="box">
+   <br><br>
+   <label for="Address"> <h5 >Area,Street,Sector,Village</h5></label>
+   <input type="text"  class="box">
+   <br><br>
+   <label for="name"> <h5 >Landmark
+   </h5></label>
+   <input type="text"  placeholder="E.g.near apollo hospital" class="box" >
+   <br><br>
+   
+
+   <div class="flex">
+    <div class="town" >
+        <h5>Town/City</h5>
+        <input type="text" class="align" id="">
+</div>
+<div class="city">
+<h5 style="margin-left: 20px;">State</h5>
+<select style="margin-left: 20px;background-color:rgb(235, 240, 244);width: 180px;
+height: 23px;  margin-top: 5px; 
+border-radius: 2px; " >
+<option value="">Choose a State</option>
+<option value="">Telangana</option>
+<option value="">Maharastra</option>
+<option value="">Karnataka</option>
+</select>
+</div>
+   </div><br><br>
+
+   <input type="checkbox" ><span style="margin-left: 5px;">Make this is my default address</span>
+   <br><br>
+   <h5>Delivery instructions(optional)</h5>
+   <i class="fa-solid fa-chevron-down"></i> <span style="color: rgb(0, 59, 115);"><a href="#">Add preferences, notes, access codes and more</a></span>
+<br><br>
+ <button type="submit" class="submit">Add Address</button>
+
+   </div>
+</body>
+</html>
