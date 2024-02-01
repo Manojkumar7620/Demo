@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Website Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #toolbar {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #editor {
+            border: 1px solid #ccc;
+            min-height: 300px;
+            padding: 20px;
+        }
+
+        .draggable {
+            cursor: move;
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .section {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="toolbar">
+    <div class="draggable" draggable="true" ondragstart="drag(event)" data-type="text">Text</div>
+    <div class="draggable" draggable="true" ondragstart="drag(event)" data-type="image">Image</div>
+</div>
+
+<div id="editor" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <!-- Sections will be added here dynamically -->
+</div>
+
+<button onclick="saveWebsite()">Save</button>
+<button onclick="downloadWebsite()">Download</button>
+
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text/plain", event.target.dataset.type);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        const elementType = event.dataTransfer.getData("text/plain");
+        const section = createSection(elementType);
+        event.target.appendChild(section);
+    }
+
+    function createSection(elementType) {
+        const section = document.createElement('div');
+        section.className = 'section';
+
+        const deleteBtn = document.createElement('span');
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.innerHTML = '&times;';
+        deleteBtn.onclick = function () {
+            section.parentNode.removeChild(section);
+        };
+        section.appendChild(deleteBtn);
+
+        if (elementType === 'text') {
+            const textArea = document.createElement('textarea');
+            section.appendChild(textArea);
+        } else if (elementType === 'image') {
+            const imageInput = document.createElement('input');
+            imageInput.type = 'file';
+            section.appendChild(imageInput);
+        }
+
+        return section;
+    }
+
+    function saveWebsite() {
+        const editorContent = document.getElementById('editor').innerHTML;
+        localStorage.setItem('websiteContent', editorContent);
+        alert('Website saved successfully!');
+    }
+
+    function downloadWebsite() {
+        const editorContent = localStorage.getItem('websiteContent');
+        const blob = new Blob([editorContent], { type: 'text/html' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'index.html';
+        link.click();
+    }
+</script>
+
+</body>
+</html>
